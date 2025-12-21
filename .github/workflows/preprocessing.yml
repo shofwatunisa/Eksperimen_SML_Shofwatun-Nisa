@@ -1,0 +1,32 @@
+name: Automated Preprocessing
+
+on:
+  push:
+    paths:
+      - "preprocessing/**"
+      - "text_emotion_raw/**"
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Install dependencies
+      run: |
+        pip install pandas nltk scikit-learn
+
+    - name: Download NLTK data
+      run: |
+        python -m nltk.downloader punkt stopwords punkt_tab
+
+    - name: Run preprocessing script
+      run: |
+        python preprocessing/automate_Shofwatun_Nisa.py
