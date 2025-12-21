@@ -10,8 +10,8 @@ nltk.download('punkt')
 nltk.download('punkt_tab')
 nltk.download('stopwords')
 
-INPUT_PATH = "/content/drive/MyDrive/Eksperimen_SML_Shofwatun_Nisa/text_emotion_raw/text_emotion.csv"
-OUTPUT_PATH = "/content/drive/MyDrive/Eksperimen_SML_Shofwatun_Nisa/preprocessing/text_emotion_preprocessing/text_emotion_clean.csv"
+INPUT_PATH = "text_emotion_raw/text_emotion.csv"
+OUTPUT_PATH = "preprocessing/text_emotion_preprocessing/text_emotion_clean.csv"
 
 def clean_text(text):
     text = text.lower()
