@@ -5,7 +5,9 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from sklearn.preprocessing import LabelEncoder
+import os
 
+# Download NLTK resources
 nltk.download('punkt')
 nltk.download('stopwords')
 
@@ -39,7 +41,7 @@ def preprocess():
 
     df_final = df[['processed_text', 'label_encoded']]
 
-    import os
+    # Pastikan folder ada sebelum save
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     df_final.to_csv(OUTPUT_PATH, index=False)
 
