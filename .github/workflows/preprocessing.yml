@@ -19,8 +19,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Remove old NLTK data
+        run: |
+          rm -rf /home/runner/nltk_data/tokenizers/punkt_tab
+
       - name: Install dependencies
         run: |
+          pip install --upgrade pip
           pip install pandas nltk scikit-learn
 
       - name: Download NLTK data
