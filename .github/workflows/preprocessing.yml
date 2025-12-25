@@ -6,6 +6,9 @@ on:
       - "preprocessing/**"
       - "text_emotion_raw/**"
 
+permissions:
+  contents: write
+
 jobs:
   preprocess:
     runs-on: ubuntu-latest
