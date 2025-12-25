@@ -5,6 +5,7 @@ on:
     paths:
       - "preprocessing/**"
       - "text_emotion_raw/**"
+  workflow_dispatch:
 
 permissions:
   contents: write
